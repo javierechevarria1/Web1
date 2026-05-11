@@ -15,17 +15,17 @@ const staggerContainer = {
 };
 
 const SkillTag = ({ name, icon: Icon }: { name: string, icon: any }) => (
-  <div className="flex items-center gap-3 bg-[#0a0f18] border border-slate-800/80 px-4 py-3 rounded-xl group hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_5px_15px_rgba(34,211,238,0.1)] hover:-translate-y-1">
-    <div className="p-2 bg-[#05080f] rounded-lg group-hover:bg-cyan-500/10 transition-colors duration-300">
-      {Icon && <Icon size={18} className="text-slate-400 group-hover:text-cyan-400 transition-colors duration-300" />}
+  <div className="flex items-center gap-3 bg-[#0a0f18] border border-slate-800/80 px-4 py-2.5 rounded-xl group hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_5px_15px_rgba(34,211,238,0.1)] hover:-translate-y-1">
+    <div className="p-1.5 bg-[#05080f] rounded-lg group-hover:bg-cyan-500/10 transition-colors duration-300">
+      {Icon && <Icon size={16} className="text-slate-400 group-hover:text-cyan-400 transition-colors duration-300" />}
     </div>
-    <span className="font-medium text-sm md:text-base text-slate-300 group-hover:text-white transition-colors duration-300 tracking-wide">{name}</span>
+    <span className="font-medium text-sm text-slate-300 group-hover:text-white transition-colors duration-300 tracking-wide">{name}</span>
   </div>
 );
 
 export const Skills = () => {
   return (
-    <section className="relative h-screen w-full flex flex-col justify-center px-6 pt-16 overflow-hidden bg-[#0d131f]">
+    <section className="relative h-screen w-full flex flex-col justify-center px-6 pt-20 pb-4 overflow-hidden bg-[#0d131f]">
       {/* Ambient light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-cyan-900/10 blur-[120px] -z-10 rounded-full"></div>
       
@@ -35,13 +35,13 @@ export const Skills = () => {
         variants={staggerContainer}
         className="max-w-5xl mx-auto w-full"
       >
-        <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-8">
+        <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-5">
           <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Habilidades</h2>
           <div className="h-[1px] flex-1 bg-slate-800"></div>
         </motion.div>
 
         <div>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8">
             <motion.div variants={fadeInUp}>
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-3 pb-3 border-b border-slate-800/80">
                 <Server className="text-cyan-400" size={20}/> Infraestructura & Redes
@@ -70,7 +70,7 @@ export const Skills = () => {
           </div>
 
           {/* Tag Cloud */}
-          <motion.div variants={fadeInUp} className="mt-8 pt-6 border-t border-slate-800/50">
+          <motion.div variants={fadeInUp} className="mt-5 pt-4 border-t border-slate-800/50">
             <p className="font-mono text-sm text-slate-500 mb-4 uppercase tracking-wider">&gt; Otras herramientas:</p>
             <div className="flex flex-wrap gap-3">
               {["Git", "GitHub", "Bash/Shell", "VS Code", "Hardware"].map((skill, idx) => (
