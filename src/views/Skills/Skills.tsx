@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Server, Code, Network, Terminal, Database, Shield } from 'lucide-react';
+import { Server, Code, Network, Terminal, Database, Shield, GitBranch } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -49,9 +49,9 @@ export const Skills = () => {
               <div className="flex flex-col gap-3">
                 <SkillTag name="Administración Windows/Linux" icon={Terminal} />
                 <SkillTag name="Redes TCP/IP & Routing" icon={Network} />
-                <SkillTag name="Virtualización & Entornos" icon={Database} />
+                <SkillTag name="Virtualización & Entornos" icon={Server} />
                 <SkillTag name="Seguridad en Sistemas" icon={Shield} />
-                <SkillTag name="Bases de Datos" icon={Database} />
+                <SkillTag name="Scripting & Automatización" icon={Terminal} />
               </div>
             </motion.div>
             
@@ -63,7 +63,8 @@ export const Skills = () => {
                 <SkillTag name="HTML5 + CSS3 + Tailwind" icon={Code} />
                 <SkillTag name="React.js + Vite" icon={Code} />
                 <SkillTag name="Python & Java" icon={Terminal} />
-                <SkillTag name="Node.js & SQL" icon={Database} />
+                <SkillTag name="Bases de Datos & SQL" icon={Database} />
+                <SkillTag name="Git & Control de Versiones" icon={GitBranch} />
               </div>
             </motion.div>
           </div>
