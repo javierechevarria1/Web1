@@ -28,9 +28,9 @@ export const CustomCursor = () => {
 
     const tick = () => {
       if (cursorRef.current) {
-        const scale = hovering.current ? 1.3 : 1;
+        const scale = hovering.current ? 1.5 : 1;
         cursorRef.current.style.transform =
-          `translate(${mouse.current.x}px, ${mouse.current.y}px) scale(${scale})`;
+          `translate(${mouse.current.x - 10}px, ${mouse.current.y - 10}px) scale(${scale})`;
       }
 
       raf.current = requestAnimationFrame(tick);
@@ -47,23 +47,19 @@ export const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] transition-transform duration-150 ease-out"
-      style={{ willChange: 'transform' }}
+      className="fixed top-0 left-0 pointer-events-none z-[9999]"
+      style={{ willChange: 'transform', transform: 'translate(-10px, -10px)' }}
     >
-      <svg
-        width="24"
-        height="28"
-        viewBox="0 0 24 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M2 2L2 22L7.5 16.5L11.5 25L14.5 23.5L10.5 14.5H18L2 2Z"
-          fill="#22d3ee"
-          stroke="#0a0f18"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Outer ring */}
+        <circle cx="10" cy="10" r="8.5" stroke="#22d3ee" strokeWidth="0.6" strokeOpacity="0.4"/>
+        {/* Cross lines with gap */}
+        <line x1="10" y1="1" x2="10" y2="6.5" stroke="#22d3ee" strokeWidth="1" strokeLinecap="round"/>
+        <line x1="10" y1="13.5" x2="10" y2="19" stroke="#22d3ee" strokeWidth="1" strokeLinecap="round"/>
+        <line x1="1" y1="10" x2="6.5" y2="10" stroke="#22d3ee" strokeWidth="1" strokeLinecap="round"/>
+        <line x1="13.5" y1="10" x2="19" y2="10" stroke="#22d3ee" strokeWidth="1" strokeLinecap="round"/>
+        {/* Center dot */}
+        <circle cx="10" cy="10" r="1.2" fill="#22d3ee"/>
       </svg>
     </div>
   );
