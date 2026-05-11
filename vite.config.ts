@@ -8,5 +8,5 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: '/javierechevarria1/', // for github pages
+  base: '/Web1/', // for github pages
 })
