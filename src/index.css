@@ -18,6 +18,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 ::selection {
   background-color: rgba(34, 211, 238, 0.3);
   color: #22d3ee;
