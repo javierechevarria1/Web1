@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, Send } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from '../../components/UI/Icons';
+import { LinkedinIcon } from '../../components/UI/Icons';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -72,21 +72,6 @@ export const Contact = () => {
             <Send size={15} className="text-slate-600 group-hover:text-[#0a66c2] ml-auto transition-colors duration-300" />
           </a>
 
-          <a
-            href="https://github.com/javierechevarria1"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-4 bg-slate-900/40 border border-slate-800/60 rounded-xl px-5 py-4 hover:border-slate-500/50 hover:shadow-[0_0_30px_rgba(148,163,184,0.08)] transition-all duration-300 group"
-          >
-            <div className="p-2.5 bg-slate-700/30 rounded-lg group-hover:bg-slate-700/50 transition-colors duration-300">
-              <GithubIcon size={20} className="text-slate-300" />
-            </div>
-            <div>
-              <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-0.5">GitHub</p>
-              <p className="text-white font-medium text-base">javierechevarria1</p>
-            </div>
-            <Send size={15} className="text-slate-600 group-hover:text-slate-300 ml-auto transition-colors duration-300" />
-          </a>
         </motion.div>
 
         <motion.div variants={fadeInUp}>

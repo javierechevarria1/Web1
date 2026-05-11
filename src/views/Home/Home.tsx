@@ -19,7 +19,7 @@ const staggerContainer = {
 
 export const Home = ({ onNavigateToProjects }: { onNavigateToProjects: () => void }) => {
   return (
-    <section className="relative h-screen w-full flex flex-col justify-center px-6 bg-[#0a0f18]">
+    <section className="relative h-screen w-full flex flex-col justify-center px-6 pt-16 bg-[#0a0f18]">
       {/* Background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan-900/20 via-[#0a0f18] to-[#0a0f18] -z-10"></div>
       <div className="absolute top-1/4 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] -z-10"></div>

@@ -16,7 +16,7 @@ const staggerContainer = {
 
 export const Experience = () => {
   return (
-    <section className="relative h-screen w-full flex flex-col justify-center px-6 overflow-hidden bg-[#0a0f18]">
+    <section className="relative h-screen w-full flex flex-col justify-center px-6 pt-16 overflow-hidden bg-[#0a0f18]">
       <motion.div 
         initial="hidden"
         animate="visible"

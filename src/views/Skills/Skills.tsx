@@ -25,7 +25,7 @@ const SkillTag = ({ name, icon: Icon }: { name: string, icon: any }) => (
 
 export const Skills = () => {
   return (
-    <section className="relative h-screen w-full flex flex-col justify-center px-6 overflow-hidden bg-[#0d131f]">
+    <section className="relative h-screen w-full flex flex-col justify-center px-6 pt-16 overflow-hidden bg-[#0d131f]">
       {/* Ambient light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-cyan-900/10 blur-[120px] -z-10 rounded-full"></div>
       
