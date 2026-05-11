@@ -1,15 +1,14 @@
 import { useEffect, useRef } from 'react';
 
 export const CustomCursor = () => {
-  const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
   const mouse = useRef({ x: -100, y: -100 });
-  const ring = useRef({ x: -100, y: -100 });
+  const pos = useRef({ x: -100, y: -100 });
   const hovering = useRef(false);
   const raf = useRef<number | null>(null);
+  const SIZE = 36;
 
   useEffect(() => {
-    // Only on pointer devices (not touch)
     if (!window.matchMedia('(pointer: fine)').matches) return;
 
     const onMove = (e: MouseEvent) => {
@@ -19,7 +18,7 @@ export const CustomCursor = () => {
     const onEnter = () => { hovering.current = true; };
     const onLeave = () => { hovering.current = false; };
 
-    const addListeners = () => {
+    const bindInteractive = () => {
       document.querySelectorAll('a, button, [role="button"]').forEach(el => {
         el.addEventListener('mouseenter', onEnter);
         el.addEventListener('mouseleave', onLeave);
@@ -27,21 +26,16 @@ export const CustomCursor = () => {
     };
 
     window.addEventListener('mousemove', onMove);
-    addListeners();
+    bindInteractive();
 
     const tick = () => {
-      ring.current.x += (mouse.current.x - ring.current.x) * 0.1;
-      ring.current.y += (mouse.current.y - ring.current.y) * 0.1;
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.12;
+      pos.current.y += (mouse.current.y - pos.current.y) * 0.12;
 
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${mouse.current.x - 4}px, ${mouse.current.y - 4}px)`;
-      }
-      if (ringRef.current) {
-        const scale = hovering.current ? ' scale(1.8)' : '';
-        ringRef.current.style.transform = `translate(${ring.current.x - 18}px, ${ring.current.y - 18}px)${scale}`;
-        ringRef.current.style.borderColor = hovering.current
-          ? 'rgba(34,211,238,0.9)'
-          : 'rgba(34,211,238,0.45)';
+      if (cursorRef.current) {
+        const scale = hovering.current ? 2.2 : 1;
+        cursorRef.current.style.transform =
+          `translate(${pos.current.x - SIZE / 2}px, ${pos.current.y - SIZE / 2}px) scale(${scale})`;
       }
 
       raf.current = requestAnimationFrame(tick);
@@ -56,17 +50,15 @@ export const CustomCursor = () => {
   }, []);
 
   return (
-    <>
-      <div
-        ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 bg-cyan-400 rounded-full pointer-events-none z-[9999]"
-        style={{ willChange: 'transform' }}
-      />
-      <div
-        ref={ringRef}
-        className="fixed top-0 left-0 w-9 h-9 border rounded-full pointer-events-none z-[9999] transition-[border-color,transform] duration-200"
-        style={{ willChange: 'transform', borderColor: 'rgba(34,211,238,0.45)' }}
-      />
-    </>
+    <div
+      ref={cursorRef}
+      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] bg-white transition-transform duration-200 ease-out"
+      style={{
+        width: SIZE,
+        height: SIZE,
+        mixBlendMode: 'difference',
+        willChange: 'transform',
+      }}
+    />
   );
 };
