@@ -51,6 +51,7 @@ export const Skills = () => {
                 <SkillTag name="Redes TCP/IP & Routing" icon={Network} />
                 <SkillTag name="Virtualización & Entornos" icon={Database} />
                 <SkillTag name="Seguridad en Sistemas" icon={Shield} />
+                <SkillTag name="Bases de Datos" icon={Database} />
               </div>
             </motion.div>
             
@@ -71,7 +72,7 @@ export const Skills = () => {
           <motion.div variants={fadeInUp} className="mt-8 pt-6 border-t border-slate-800/50">
             <p className="font-mono text-sm text-slate-500 mb-4 uppercase tracking-wider">&gt; Otras herramientas:</p>
             <div className="flex flex-wrap gap-3">
-              {["Git", "GitHub", "Bash/Shell", "VS Code", "Bases de Datos", "Hardware"].map((skill, idx) => (
+              {["Git", "GitHub", "Bash/Shell", "VS Code", "Hardware"].map((skill, idx) => (
                 <span key={idx} className="px-4 py-2 bg-[#05080f] border border-slate-800/80 rounded-lg text-slate-300 font-mono text-xs hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 cursor-default hover:shadow-[0_0_15px_rgba(34,211,238,0.1)]">
                   {skill}
                 </span>

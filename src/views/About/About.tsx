@@ -55,6 +55,12 @@ export const About = () => {
             <p className="text-green-400/90 text-lg">
               "La excelencia no es un acto, es un hábito."
             </p>
+            <p className="mb-4 mt-6">
+              <span className="text-cyan-400">&gt; echo $EMAIL</span>
+            </p>
+            <p className="mb-4 text-slate-400 text-lg">
+              javiecheva99@gmail.com
+            </p>
             <p className="mt-4 animate-pulse text-cyan-400">_</p>
           </div>
         </motion.div>
