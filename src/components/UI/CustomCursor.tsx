@@ -6,7 +6,6 @@ export const CustomCursor = () => {
   const pos = useRef({ x: -100, y: -100 });
   const hovering = useRef(false);
   const raf = useRef<number | null>(null);
-  const SIZE = 36;
 
   useEffect(() => {
     if (!window.matchMedia('(pointer: fine)').matches) return;
@@ -29,13 +28,13 @@ export const CustomCursor = () => {
     bindInteractive();
 
     const tick = () => {
-      pos.current.x += (mouse.current.x - pos.current.x) * 0.12;
-      pos.current.y += (mouse.current.y - pos.current.y) * 0.12;
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.14;
+      pos.current.y += (mouse.current.y - pos.current.y) * 0.14;
 
       if (cursorRef.current) {
-        const scale = hovering.current ? 2.2 : 1;
+        const scale = hovering.current ? 1.3 : 1;
         cursorRef.current.style.transform =
-          `translate(${pos.current.x - SIZE / 2}px, ${pos.current.y - SIZE / 2}px) scale(${scale})`;
+          `translate(${pos.current.x}px, ${pos.current.y}px) scale(${scale})`;
       }
 
       raf.current = requestAnimationFrame(tick);
@@ -52,13 +51,24 @@ export const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] bg-white transition-transform duration-200 ease-out"
-      style={{
-        width: SIZE,
-        height: SIZE,
-        mixBlendMode: 'difference',
-        willChange: 'transform',
-      }}
-    />
+      className="fixed top-0 left-0 pointer-events-none z-[9999] transition-transform duration-150 ease-out"
+      style={{ willChange: 'transform' }}
+    >
+      <svg
+        width="24"
+        height="28"
+        viewBox="0 0 24 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2 2L2 22L7.5 16.5L11.5 25L14.5 23.5L10.5 14.5H18L2 2Z"
+          fill="#22d3ee"
+          stroke="#0a0f18"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
   );
 };
