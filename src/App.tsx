@@ -2,7 +2,6 @@ import { AnimatePresence } from 'framer-motion';
 import { useSectionNavigation } from './hooks/useSectionNavigation';
 import { Navbar } from './components/Navbar/Navbar';
 import { PageTransition } from './components/UI/PageTransition';
-import { CustomCursor } from './components/UI/CustomCursor';
 
 import { Home } from './views/Home/Home';
 import { About } from './views/About/About';
@@ -15,7 +14,6 @@ function App() {
 
   return (
     <div className="fixed inset-0 w-full h-full bg-[#0a0f18] text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden">
-      <CustomCursor />
       <Navbar activeSectionId={activeSectionId} onNavigate={goToSectionById} />
 
       <main className="relative w-full h-full">
