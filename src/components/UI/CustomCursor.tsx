@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 export const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const mouse = useRef({ x: -100, y: -100 });
-  const pos = useRef({ x: -100, y: -100 });
   const hovering = useRef(false);
   const raf = useRef<number | null>(null);
 
@@ -28,13 +27,10 @@ export const CustomCursor = () => {
     bindInteractive();
 
     const tick = () => {
-      pos.current.x += (mouse.current.x - pos.current.x) * 0.14;
-      pos.current.y += (mouse.current.y - pos.current.y) * 0.14;
-
       if (cursorRef.current) {
         const scale = hovering.current ? 1.3 : 1;
         cursorRef.current.style.transform =
-          `translate(${pos.current.x}px, ${pos.current.y}px) scale(${scale})`;
+          `translate(${mouse.current.x}px, ${mouse.current.y}px) scale(${scale})`;
       }
 
       raf.current = requestAnimationFrame(tick);
