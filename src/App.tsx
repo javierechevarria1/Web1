@@ -7,6 +7,7 @@ import { Home } from './views/Home/Home';
 import { About } from './views/About/About';
 import { Experience } from './views/Experience/Experience';
 import { Skills } from './views/Skills/Skills';
+import { Contact } from './views/Contact/Contact';
 
 function App() {
   const { activeSectionId, activeSectionIndex, goToSectionById } = useSectionNavigation();
@@ -37,12 +38,17 @@ function App() {
               <Skills />
             </PageTransition>
           )}
+          {activeSectionId === 'contact' && (
+            <PageTransition key="contact" id="contact">
+              <Contact />
+            </PageTransition>
+          )}
         </AnimatePresence>
       </main>
 
       {/* Indicador de scroll */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-3">
-        {[0, 1, 2, 3].map((index) => (
+        {[0, 1, 2, 3, 4].map((index) => (
           <div 
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-500 ${
