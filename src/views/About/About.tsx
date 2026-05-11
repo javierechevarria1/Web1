@@ -47,7 +47,7 @@ export const About = () => {
               <span className="text-cyan-400">&gt; cat objetivos.txt</span>
             </p>
             <p className="mb-5 text-slate-400 leading-relaxed">
-              "Mi próximo gran reto es dominar la creación de software. Por ello, entre 2026 y 2028 cursaré DAW para unir el mundo de la infraestructura con el desarrollo web."
+              "Mi próximo gran reto es dominar la creación de software. Entre 2026 y 2028 cursaré DAW y me especializaré en Hacking Ético e IA aplicados a la Ciberseguridad e Ingeniería de Software."
             </p>
             <p className="mb-3">
               <span className="text-cyan-400">&gt; echo $FILOSOFIA</span>
