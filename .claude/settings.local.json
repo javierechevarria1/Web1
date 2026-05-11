@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git add *)",
       "Bash(git commit *)",
-      "WebFetch(domain:www.acsdesigns.es)"
+      "WebFetch(domain:www.acsdesigns.es)",
+      "Bash(npm run *)",
+      "Bash(git push *)"
     ]
   }
 }
