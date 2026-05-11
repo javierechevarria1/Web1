@@ -6,7 +6,7 @@ export const CustomCursor = () => {
   const mouse = useRef({ x: -100, y: -100 });
   const ring = useRef({ x: -100, y: -100 });
   const hovering = useRef(false);
-  const raf = useRef<number>();
+  const raf = useRef<number | null>(null);
 
   useEffect(() => {
     // Only on pointer devices (not touch)
