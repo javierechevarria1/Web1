@@ -59,8 +59,9 @@ export const NetbeesModal = ({ open, onClose }: NetbeesModalProps) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0a0f18] border border-slate-700/60 rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.8)] custom-scrollbar"
+            className="allow-scroll relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0a0f18] border border-slate-700/60 rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.8)] custom-scrollbar"
             onClick={e => e.stopPropagation()}
+            onWheel={e => e.stopPropagation()}
           >
             {/* Header */}
             <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-[#0a0f18]/95 backdrop-blur border-b border-slate-800/60">
