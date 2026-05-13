@@ -27,9 +27,9 @@ const bullets = [
 
 const base = import.meta.env.BASE_URL;
 const photos = [
-  { src: `${base}images/nexa-pulsera.jpg`, alt: 'Proyecto NEXA — pulsera inteligente' },
-  { src: `${base}images/hackathon-premio.jpg`, alt: 'Primer puesto Hackathon Hack The Age' },
-  { src: `${base}images/hackathon-presentacion.jpg`, alt: 'Presentación NEXA en Netbees' },
+  { src: `${base}images/nexa-pulsera.jpeg`, alt: 'Proyecto NEXA — pulsera inteligente' },
+  { src: `${base}images/hackathon-premio.jpeg`, alt: 'Primer puesto Hackathon Hack The Age' },
+  { src: `${base}images/hackathon-presentacion.jpeg`, alt: 'Presentación NEXA en Netbees' },
 ];
 
 export const NetbeesModal = ({ open, onClose }: NetbeesModalProps) => {
