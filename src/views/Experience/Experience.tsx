@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Award } from 'lucide-react';
+import { Briefcase, Award, ChevronRight } from 'lucide-react';
+import { NetbeesModal } from '../../components/UI/NetbeesModal';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -15,6 +17,8 @@ const staggerContainer = {
 };
 
 export const Experience = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section className="relative h-screen w-full flex flex-col justify-center px-6 pt-16 overflow-hidden bg-[#0a0f18]">
       <motion.div 
@@ -81,6 +85,12 @@ export const Experience = () => {
                   <span>Ganador del Hackathon "Hack The Age" (Netbees)</span>
                 </div>
               </div>
+              <button
+                onClick={() => setModalOpen(true)}
+                className="mt-4 flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors duration-200 group"
+              >
+                Ver más <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
+              </button>
             </div>
           </motion.div>
 
@@ -100,6 +110,8 @@ export const Experience = () => {
 
         </div>
       </motion.div>
+
+      <NetbeesModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };
