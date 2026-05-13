@@ -8,6 +8,7 @@ import { About } from './views/About/About';
 import { Experience } from './views/Experience/Experience';
 import { Skills } from './views/Skills/Skills';
 import { Contact } from './views/Contact/Contact';
+import { Projects } from './views/Projects/Projects';
 
 function App() {
   const { activeSectionId, activeSectionIndex, goToSectionById } = useSectionNavigation();
@@ -33,6 +34,11 @@ function App() {
               <Experience />
             </PageTransition>
           )}
+          {activeSectionId === 'projects' && (
+            <PageTransition key="projects" id="projects">
+              <Projects />
+            </PageTransition>
+          )}
           {activeSectionId === 'skills' && (
             <PageTransition key="skills" id="skills">
               <Skills />
@@ -48,7 +54,7 @@ function App() {
 
       {/* Indicador de scroll */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-3">
-        {[0, 1, 2, 3, 4].map((index) => (
+        {[0, 1, 2, 3, 4, 5].map((index) => (
           <div 
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-500 ${
